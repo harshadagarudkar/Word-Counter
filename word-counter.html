@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>word counter</title>
+</head>
+<style>
+    body{
+       background-color: rgba(127, 204, 255, 0.762);
+       background-repeat: no-repeat;
+    }
+    h1{
+        color:rgb(0, 0, 0);
+        /* background-color:rgb(93, 233, 233); */
+        text-align: center;
+        font-style: italic;
+        font-weight: bolder;
+        font-size: 45px;
+        text-shadow: 1px 1px 5px rgb(255, 0, 0);
+    }
+    #container{
+        text-align: center;
+        border: 1px solid rgba(227, 238, 103, 0.845);
+        margin-left: 400px;
+        margin-right: 400px;
+        padding-bottom: 10px;
+        background-color: #fdfdfd;
+        box-shadow: 1px 1px #bae317;
+    }
+    #counter{
+         display:inline-flex;
+        text-align: center;
+        align-items: center;
+       flex-basis: 100%;
+       list-style: none;
+       flex-wrap: wrap;
+       justify-content: space-between;
+    }
+    #counter p{
+        justify-content: space-between;
+        margin-left: 0px;
+        margin-right: 60px;
+        font-size: 25px;
+        font-weight: 500;
+        
+
+    }
+   #counter span{
+             font-size: 30px;
+             font-weight: bold;
+            color: #fd0a0a;
+            text-align: center;
+            opacity: 1;
+    }
+   textarea{
+        
+        align-content: center;
+        margin-right: 10px;
+        margin-left: 5px;
+        border: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.679);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.679);
+        border-left-style: none;
+        font-size: 20px;
+        font-style: italic;
+    }
+    
+</style>
+<body>
+    <h1>The Word Counter</h1> 
+
+    <div id="container">
+
+        <ul id="counter">
+           <li>
+           <p> words</p>
+            
+            <span id="words">0</span>
+           </li> 
+
+           <li>
+            <p>character</p>
+            
+            <span id="char">0</span>
+           </li> 
+          
+           <li>
+           <p>sentences</p>
+            
+            <span id="sen">0</span>
+           </li>
+           
+        </ul>
+        <br>
+        <label>
+        <textarea  id="textbox" cols="60" rows="20" placeholder="type or pase here"></textarea>
+    </label>
+    </div>
+ <script>
+    let txt = document.getElementById("textbox");
+
+    txt.addEventListener('input',function(){
+        let add = this.value;
+        let char = add.length;
+        document.getElementById("char").innerHTML=char;
+
+  add = add.trim();
+        let words = add.split(" ");
+        let wrd = words.length;
+        document.getElementById("words").innerHTML=wrd;
+     
+
+        let sen = add.split(".");
+        let sentence = sen.length;
+        document.getElementById("sen").innerHTML=sentence;
+
+        
+
+
+    });
+ </script>
+</body>
+</html>
